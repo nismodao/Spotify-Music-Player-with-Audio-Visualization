@@ -95,7 +95,6 @@ $('#albumResults').on('click', function (e) {
         audioObject.addEventListener('pause', function () {
           currentTrack[target.outerHTML] = false;
           target.classList.remove('playing');
-
         });
       });
     }
