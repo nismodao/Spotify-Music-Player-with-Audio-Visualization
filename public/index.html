@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Spotify Preview With Audio Visualiser</title>
+    <link rel="icon" href="//d2c87l0yth4zbw-2.global.ssl.fastly.net/i/_global/favicon.png">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id = "freq">
+      <canvas id="here" data-spy="affix" class="small"></canvas>
+    </div>
+    <script $('#here').affix({});></script> 
+    <div class ="container">
+      <div class="inner-cover">
+        <img src="images/spotify.png" width="145" height = "50">
+        <h1 class="cover-heading">With Audio Visualiser</h1>
+        <p class="lead">Type an Artist name, and scroll down to view a selection of albums.  Upon selection, a random track from the album will begin playing -- triggering an audio waveform and a tracklisting of the album.  Click on any track to play a 30 second preview from Spotify. Works best in the Chrome browser. 
+        </p>
+        <form id="search-form">  
+          <input type="text" id="query" value="" class="form-control" placeholder="Enter Artist Name"/><br>
+          <input type="submit" id="search" class="btn btn-md btn-default" value="Search">
+        </form><br>
+        <button class="btn btn-md btn-warning" id="loading" style="display:none"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...</button>
+        <br><br><br><br>                     
+        <div class="jumbotron" id ="alpha">
+          <h1> Have a Listen</h1>
+            <button  type = "button" id= "Stop" class = "btn btn-md btn-default">
+            <span class="glyphicon glyphicon-stop"></span>
+            Stop
+            </button>
+            <button  type = "button" id= "change" class = "btn btn-md btn-default green"> 
+            <span class="glyphicon glyphicon-adjust"></span>
+            Color
+            </button>
+            <br><br>
+            <table id="table" class="table">
+              <tr>
+                <th>Song</th>
+                <th>Artist</th>
+                <th>Album</th>
+              </tr>
+            <div id = "area"></div>
+            </table>
+        </div>
+      </div>
+      <div id="albumResults"></div>
+  </div>
+  Copyright 2015 by Nam Dao
+  <script src= "jquery.min.js"></script> 
+  <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src= "app.js"></script>
+  <script src= "main.js"></script>
+  <script>
+  $(document).ajaxSend(function(event, request, settings) {
+    $('#loading').show();
+  });
+  $(document).ajaxComplete(function(event, request, settings) {
+    $('#loading').hide();
+  });
+  </script>
+  </body>
+</html>
