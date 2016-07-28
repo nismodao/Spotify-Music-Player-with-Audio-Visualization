@@ -21,6 +21,7 @@ canvas {
 }
 
 .jumbotron {
+  margin-top: 75px;
   background-image:
   linear-gradient(
     rgba(0, 0, 0, 0.80),
@@ -31,7 +32,6 @@ canvas {
   padding: 1px 10px 10px 10px;
   min-height: 500px;
   display:none;
-
   }
 
  .jumbotron h1 {
@@ -43,9 +43,8 @@ canvas {
   font-size: 20px;
  }
 
- .table:hover {
-  
-
+ #albumResults {
+  padding-top: 100px;
  }
 
 .btn {
@@ -195,6 +194,3 @@ input:-webkit-autofill {
     from { transform: scale(1) rotate(0deg);}
     to { transform: scale(1) rotate(360deg);}
 }
-
-  
-  
