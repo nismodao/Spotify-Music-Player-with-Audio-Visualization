@@ -76,4 +76,3 @@ $("#change").on('click', function(e) {
 	}
 });
 
-
