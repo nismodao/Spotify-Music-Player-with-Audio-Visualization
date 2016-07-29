@@ -25,7 +25,7 @@ function searchAlbums (query,callback) {
 }
 
 function populateAlbums (response) {
-  document.getElementById("albumResults").innerHTML=" ";
+  document.getElementById("albumResults").innerHTML = " ";
   if (response["albums"]["items"].length === 0) alert("Artist Not Found");
   response["albums"]["items"].forEach(function(item) {
     var albumImg = [item][0]["images"][0]["url"];
@@ -68,7 +68,7 @@ function trackListPlayer (target) {
     data.tracks.items.forEach(function(item) {
       trackList[item.name] = [item.preview_url, item.track_number];
     });
-    document.getElementById("table").innerHTML="";
+    document.getElementById("table").innerHTML = "";
     $("<tr><th>SONG</th><th>ARTIST</th><th>ALBUM</th><</tr>").appendTo($("#table"));
     $.each(trackList, function(key,value) {
       $("<tr id=" + "\"row\"" + "class=" + " " + ">" + "<td>" + "<div id=" + value[0] + " " + "class=" + " " + ">" + "<span class=" + " " + "\"glyphicon glyphicon-play-circle\"" + " " + ">" + "</span>" 
@@ -77,7 +77,7 @@ function trackListPlayer (target) {
     });
     var albumLength = Object.keys(trackList).length;
     var randomSong = Math.floor((Math.random()*albumLength));
-    url =data.tracks.items[randomSong].preview_url;
+    url = data.tracks.items[randomSong].preview_url;
     $('#freq').slideDown('fast');
     document.getElementById("alpha").style.display = "block";
     window.scrollTo(0,500);
