@@ -2,9 +2,9 @@ var audioContext = new webkitAudioContext() || new AudioContext();
 
 function init () {
   var analyser, canvas, canvasContext;
-    baseAudio();
-    baseCanvas();
-    draw();
+  baseAudio();
+  baseCanvas();
+  draw();
 }
 
 function baseAudio() {
