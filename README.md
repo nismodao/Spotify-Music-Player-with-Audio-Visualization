@@ -1,4 +1,4 @@
-# Spotify-Music-Player-with-Audio-Visualization
+# Spotify Music Player with Audio Visualization
 
 https://nismospotify.herokuapp.com
 
