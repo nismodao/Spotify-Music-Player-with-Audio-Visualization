@@ -1,0 +1,4 @@
+.DS_Store
+node_modules
+public/.DS_Store
+public/jquery.min.js

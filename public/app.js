@@ -2,7 +2,7 @@ var audioObject = new Audio;
 var currentTrack = {};
 var url;
 
-function fetchTracks (albumId, callback) {
+function getTracks (albumId, callback) {
   $.ajax({
     url: 'https://api.spotify.com/v1/albums/' + albumId,
     success: function (response) {
@@ -11,7 +11,7 @@ function fetchTracks (albumId, callback) {
   });
 }
 
-function searchAlbums (query,callback) {
+function getAlbums (query,callback) {
   $.ajax({
     url: 'https://api.spotify.com/v1/search',
     data: {
@@ -63,7 +63,7 @@ $('#albumResults').on('click', function (e) {
 });
 
 function trackListPlayer (target) {
-  fetchTracks(target.getAttribute('album-id'), function (data) {
+  getTracks(target.getAttribute('album-id'), function (data) {
     var trackList = {};    
     data.tracks.items.forEach(function(item) {
       trackList[item.name] = [item.preview_url, item.track_number];
@@ -85,6 +85,7 @@ function trackListPlayer (target) {
           
     $("div[id^='http']").on('click', function(e) {
       var inputButtonClicked = $(e.currentTarget);
+      console.log(inputButtonClicked);
       if (currentTrack[inputButtonClicked.context.id]) {
         audioObject.pause();
         audioObject.addEventListener('pause', function () {
@@ -112,5 +113,5 @@ Stop.addEventListener("click", function() {
 
 document.getElementById('search-form').addEventListener('submit', function (e) {
   e.preventDefault();
-  searchAlbums(document.getElementById('query').value,populateAlbums);
+  getAlbums(document.getElementById('query').value,populateAlbums);
 }, true);
