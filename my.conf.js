@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-    'public/jquery.min.js', 'public/*', 'tests/*.js'
+    'public/jquery.min.js', 'public/index.html', 'public/*', 'tests/*.js'
     ],
 
 

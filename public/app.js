@@ -107,7 +107,7 @@ function trackListPlayer (target) {
   });
 }
 
-Stop.addEventListener("click", function() {
+$("#Stop").click(function() {
   audioObject.pause();
 });
 
