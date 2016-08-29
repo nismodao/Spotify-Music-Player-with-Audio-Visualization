@@ -59,8 +59,9 @@ module.exports = function(config) {
       Chrome_travis_ci: {
         base: 'Chrome',
         flags: ['--no-sandbox']
+      }
     },
-    
+
     browsers: ['Chrome_travis_ci'],
 
 
